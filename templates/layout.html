@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+            rel = "stylesheet"
+            href = "{{ url_for('static', filename = 'css/main.css') }}"/>
+    {% if title %}
+    <title>30 Days of Python  - {{title}}</title>
+    {% else %}
+    <title>30 Days of Python</title>
+    {% endif %}
+</head>
+
+<body>
+    <header>
+        <h1 align = "center">UNO IS STUPID</h1>
+        <nav class = "menu-container">
+            <ul class = "nav-lists">
+                <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('home')}}">Home</a></li>
+                <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('about')}}">About</a></li>
+                <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('post')}}">Post</a></li>
+                <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('result')}}">Result</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+</body>
+</html>
