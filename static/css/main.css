@@ -1,24 +1,87 @@
-.nav-lists{
-    background-color: black;
-    list-style-type: none;
-    text-align: center;
+body {
     padding: 0;
     margin: 0;
+    background-color: rgb(210, 214, 210);
+    font-weight:900;
+    line-height: 1.75;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; /* 🌟 Set to 400 for standard clean text, or 300 for thinner text */
+    word-spacing: 1.5px;
+}
 
+
+h1,
+h2 {
+    margin-top:40px;
+    margin-left: 60px;
+    font-weight: 300;
+    font-family: Nunito;
+    }
+
+.menu-container{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    background-color: #4a7799;
+    padding: 20px 30px
+}
+
+.nav-lists{
+    display:flex;
+    list-style-type: none;
+    float:right;
+    margin-right:200px;
+}
+
+.nav-list{
+    float: right;
+    margin-left:20px;
 }
 
 .nav-lists a {
     text-decoration: none;
     color: white;
-    display: block;
-    padding:15px 0;
-}
+    font-size:23px;
 
-.menu-container a:hover{
+}
+.header-link{
+    color: white;
+    padding:45px;
+    font-size: 35px;
+    text-decoration: none;}
+
+.nav-list-link:hover{
     background-color: gray;
 }
 
+.container p{
+    margin-right:100px;
+    margin-left:50px;
+    text-align:justify;
+    font-size: 25px;
+    font-weight: 300;
+}
+.tech-lists {
+    margin-left:10px;
+    text-align: left;
+    font-size: 20px;
+    list-style-type: none;
 
+}
 
+.tech{
+text-style
+margin-bottom:10px;}
 
+.container textarea{
+    display:block;
+    margin-left:50px;
+    width:50%
+
+    }
+.btn{
+font-size:20
+margin-top:10px;
+margin-left:55px;
+}
 

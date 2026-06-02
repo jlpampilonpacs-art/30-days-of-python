@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link
             rel = "stylesheet"
             href = "{{ url_for('static', filename = 'css/main.css') }}"/>
@@ -14,15 +15,18 @@
 
 <body>
     <header>
-        <h1 align = "center">UNO IS STUPID</h1>
-        <nav class = "menu-container">
+        <div class = "menu-container">
+            <div class = "header-container">
+                <a class = "header-link" href = "/">30DaysOfPython</a>
+            </div>
             <ul class = "nav-lists">
                 <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('home')}}">Home</a></li>
                 <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('about')}}">About</a></li>
-                <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('post')}}">Post</a></li>
-                <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('result')}}">Result</a></li>
+                <li class = "nav-list"><a class = "nav-list-link" href = "{{url_for('post')}}">Text Analyzer</a></li>
+
+
             </ul>
-        </nav>
+        </div>
     </header>
     <main>
         {% block content %} {% endblock %}
