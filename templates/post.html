@@ -1,14 +1,15 @@
 {% extends 'layout.html' %} {% block content %}
-<div class="container">
-  <h1>Text Analyzer</h1>
-  <form action="https://thirtydaysofpython-v1.herokuapp.com/post" method="POST">
-    <div>
-      <textarea rows="25" name="content" autofocus placeholder="Write text or copy and paste text to analyse"></textarea>
-    </div>
-    <div>
-      <input type="submit" class="btn" value="Process Text" />
-    </div>
-  </form>
-</div>
-
+<div class="Head-container">
+  <h1 class="analyzer-h1">Text Analyzer</h1>
+  <div class="text-container">
+    <form action="{{url_for('result')}}" method="POST">
+      <div>
+        <textarea class="text-analyzer" rows="25" name="content" autofocus placeholder="Write text or copy and paste text to analyse" required></textarea>
+      </div>
+      <div>
+        <input type="submit" class="btn" value="PROCESS TEXT"/>
+      </div>
+    </form>
+  </div>
+</div>>
 {% endblock %}

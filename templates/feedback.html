@@ -1,0 +1,48 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="feedback-main">
+    <div class="feedback-sub">
+        <form id="feedback-id" action="{{url_for('feedback')}}" method="post">
+            <textarea class="comment-area" rows="6" name ="feedback" placeholder="Write a feedback" required></textarea>
+            <input type="submit" id="feedback-btn" class="btn" value="Send"/>
+        </form>
+        {% for comment in comments %}
+        <div class="container-element">
+            <p class="comment-element">{{comment.feedback}}</p>
+            <p class="date-element">{{comment.datetime}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('feedback-id');
+        var button = document.getElementById('feedback-btn');
+        // Grab the textarea element
+        var textarea = document.querySelector('.comment-area');
+
+        form.addEventListener('submit', function(event) {
+            // .trim() removes any accidental spaces or enters the user typed
+            var feedbackValue = textarea.value.trim();
+
+            // JS Guard Clause: If the textarea is empty, stop everything!
+            if (feedbackValue === '') {
+                event.preventDefault(); // Stops the form from submitting
+                alert('Please write something before sending!'); // Optional warning
+                return; // Exits the function early so the success animation never runs
+            }
+
+            // If it passes the check, THEN show the success animation
+            event.preventDefault();
+
+            button.value = 'Successfully Added!';
+            button.style.backgroundColor = '#2ecc71';
+            button.style.color = '#ffffff';
+            button.disabled = true;
+
+            setTimeout(function() {
+                form.submit();
+            }, 1500);
+        });
+    });
+</script>
+{% endblock %}

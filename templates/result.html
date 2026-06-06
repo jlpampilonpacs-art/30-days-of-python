@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'layout.html' %} {% block content %}
 
-</body>
-</html>
+<div class="Head-container">
+    <h1 class="analyzer-title">Text Analyzer</h1>
+    <div class="Main-Container">
+        <div class="Table-Column">
+            <div class="table-header">Word</div>
+            {% for item in placeholder %}
+                <div class="table-elements">{{item.word}}</div>
+            {% endfor %}
+        </div>
+
+        <div class="Table-Column">
+            <div class="table-header">Word Count</div>
+            {% for item in placeholder %}
+              <div class="table-elements">{{item.word_repeats}}</div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="summary"><p>Frequent word: {{freq}}</p></div>
+</div>
+
+{% endblock %}

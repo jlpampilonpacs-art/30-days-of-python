@@ -1,0 +1,23 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="container-students">
+    <h1>PARTICIPANTS</h1>
+    <div class="sub-container">
+        <div class="students-header">
+            <div class="header-elements">NAME</div>
+            <div class="header-elements">BIRTH-DATE</div>
+            <div class="header-elements">COUNTRY</div>
+            <div class="header-elements">SKILLS</div>
+            <div class="header-elements">BIO</div>
+        </div>
+        {% for student in students %}
+        <div class="students-rows">
+            <div class="row-elements" id="name-student">{{student.name}}</div>
+            <div class="row-elements">{{student.bday}}</div>
+            <div class="row-elements">{{student.country}}</div>
+            <div class="row-elements" id="skill-student">{{student.skills | join(", ")}}</div>
+            <div class="row-elements">{{student.bio}}</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
