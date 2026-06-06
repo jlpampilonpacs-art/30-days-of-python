@@ -7,7 +7,7 @@ from datetime import datetime
 from urllib.parse import quote_plus
 
 app = Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 
 raw_password = 'pyer123__'
 safe_password = quote_plus(raw_password)
@@ -18,12 +18,12 @@ db = client['STUDENTS']
 @app.route('/')
 def home ():
     techs = ['HTML', 'CSS', 'Flask', 'Python']
-    name = '30 Days Of Python Programming'
+    name = 'LV'
     return render_template('home.html', techs=techs, name = name, title = 'Home')
 
 @app.route('/about')
 def about():
-    name = '30 Days Of Python Programming'
+    name = 'LV'
     return render_template('about.html', name = name, title = 'About Us')
 
 #RESULT--------------------------------------------------------------------------------------------------------------------------
@@ -80,7 +80,6 @@ def API():
         "students": all_students,
         "feedbacks": all_feedbacks
     }
-
     return jsonify(database_dump)
 
 
